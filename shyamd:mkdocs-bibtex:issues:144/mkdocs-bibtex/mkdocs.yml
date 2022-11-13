@@ -1,0 +1,15 @@
+site_name: test
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+
+extra:
+  generator: false
+
+plugins:
+  - bibtex:
+      bib_file: "test.bib"
+    

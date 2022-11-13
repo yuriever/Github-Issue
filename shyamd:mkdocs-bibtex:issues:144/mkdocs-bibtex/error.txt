@@ -1,0 +1,107 @@
+Last login: Sun Nov 13 02:29:17 on ttys004
+myname@myname-MacBook-Air mkdocs-bibtex % mkdocs build
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory:
+            /Users/myname/Markdown/test/mkdocs-bibtex/site
+ERROR    -  Error reading page 'index.md': missing journal in Craig:2022cef
+Traceback (most recent call last):
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/database/__init__.py", line 503, in _find_field
+    return self.fields[name]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/utils.py", line 163, in __getitem__
+    return self._dict[key.lower()]
+KeyError: 'journal'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/database/__init__.py", line 506, in _find_field
+    return self._find_person_field(name)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/database/__init__.py", line 478, in _find_person_field
+    persons = self.persons[role]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/utils.py", line 163, in __getitem__
+    return self._dict[key.lower()]
+KeyError: 'journal'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 261, in field
+    field = entry._find_field(name, bib_data=context.get('bib_data'))
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/database/__init__.py", line 508, in _find_field
+    return self._find_crossref_field(name, bib_data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/database/__init__.py", line 483, in _find_crossref_field
+    raise KeyError(name)
+KeyError: 'journal'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/myname/.pyenv/versions/3.10.8/bin/mkdocs", line 8, in <module>
+    sys.exit(cli())
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs/__main__.py", line 250, in build_command
+    build.build(cfg, dirty=not clean)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs/commands/build.py", line 308, in build
+    _populate_page(file.page, config, files, dirty)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs/commands/build.py", line 177, in _populate_page
+    page.markdown = config.plugins.run_event(
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs/plugins.py", line 520, in run_event
+    result = method(item, **kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs_bibtex/plugin.py", line 115, in on_page_markdown
+    citation_quads = self.format_citations(cite_keys)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs_bibtex/plugin.py", line 184, in format_citations
+    self.all_references.update(format_simple(entries))
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/mkdocs_bibtex/utils.py", line 28, in format_simple
+    formatted_entry = style.format_entry("", entry)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/formatting/__init__.py", line 72, in format_entry
+    text = get_template(entry).format_data(context)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/formatting/__init__.py", line 32, in toplevel
+    return join(sep=Symbol('newblock')) [children].format_data(data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 176, in join
+    parts = [part for part in _format_list(children, data) if part]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 176, in <listcomp>
+    parts = [part for part in _format_list(children, data) if part]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 150, in <genexpr>
+    return (_format_data(part, data) for part in list_)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 146, in _format_data
+    return f(data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 237, in sentence
+    text = join(sep) [children].format_data(data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 176, in join
+    parts = [part for part in _format_list(children, data) if part]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 176, in <listcomp>
+    parts = [part for part in _format_list(children, data) if part]
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 150, in <genexpr>
+    return (_format_data(part, data) for part in list_)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 146, in _format_data
+    return f(data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 325, in tag
+    return richtext.Tag(name, *parts)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 150, in <genexpr>
+    return (_format_data(part, data) for part in list_)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 146, in _format_data
+    return f(data)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 130, in format_data
+    return self.f(self.children, data, *self.args, **self.kwargs)
+  File "/Users/myname/.pyenv/versions/3.10.8/lib/python3.10/site-packages/pybtex/style/template.py", line 265, in field
+    raise FieldIsMissing(name, entry)
+pybtex.style.template.FieldIsMissing: missing journal in Craig:2022cef
